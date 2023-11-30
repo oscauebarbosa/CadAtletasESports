@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atletas eSports</title>
+    <link rel="stylesheet" href="/static/estilo.css">
+
+</head>
+<body>
+ <div>
+        <h1 style="background-color: rgba(0,0,0,0.72);">{{ Titulo }}</h1>
+    </div>
+
+    {% for AtletaseSports in ListaAtletas %}
+
+    <div class="atletaseSports-card">
+        <h2>Nome: {{ AtletaseSports.nome }}</h2>
+        <img src="/static/playereSports.png">
+        <p>Jogo: {{ AtletaseSports.jogo }}</p>
+        <p>Função: {{ AtletaseSports.funcao }} </p>
+        <p>Ranking: {{ AtletaseSports.ranking }} </p>
+
+        <a class="btnexcluir" href="/excluir/{{ AtletaseSports.nome }}" >Excluir</a>
+        <a class="btneditar" href="editar/{{ AtletaseSports.nome }}" >Editar</a>
+        <br>
+
+
+    </div>
+
+    {% endfor %}
+
+</body>
+</html>
