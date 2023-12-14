@@ -83,7 +83,7 @@ def autenticar():
         return redirect('/cadastro')
     else:
         flash('Usuario não encontrado')
-        return redirect('/login')
+        return redirect('/')
 
 
 
