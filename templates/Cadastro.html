@@ -9,6 +9,15 @@
 
 </head>
 <body>
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                    <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+    {% endwith %}
     <div class="atletaseSports-card">
       <div class="page-header">
           <h1>{{ Titulo }}</h1>
@@ -60,7 +69,8 @@
           <p></p>
 
 
-          <button type="submit" class="btn-salvar"> Salvar </button>
+          <button type="submit" name = "salvar" class="btn-salvar"> Salvar </button>
+          <button type="submit" name = "deslogar" class="btn-salvar"> Deslogar </button>
         </fieldset>
       </form>
     </div>
